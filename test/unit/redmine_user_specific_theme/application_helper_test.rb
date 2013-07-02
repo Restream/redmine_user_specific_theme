@@ -8,6 +8,7 @@ class RedmineUserSpecificTheme::ApplicationHelperTest < ActiveSupport::TestCase
     @user = User.find(1)
     User.current = @user
     @standard_theme = Redmine::Themes.themes.first
+    Setting[:ui_theme] = @standard_theme.id
     @user_theme = Redmine::Themes.themes.last
     self.stubs(:controller_name).returns('fakecontroller')
     self.stubs(:action_name).returns('fakeaction')
@@ -17,33 +18,27 @@ class RedmineUserSpecificTheme::ApplicationHelperTest < ActiveSupport::TestCase
   end
 
   def test_current_theme_match_user_specific_theme
-    @user.pref.ui_theme = @user_theme
+    @user.pref.ui_theme = @user_theme.id
     @user.pref.save!
 
-    with_settings :ui_theme => @standard_theme.id do
-      assert_equal @user_theme.id, current_theme.id
-      assert_match /.*theme-#{@user_theme.name}.*/, body_css_classes
-    end
+    assert_equal @user_theme.id, current_theme.id
+    assert_match /.*theme-#{@user_theme.name}.*/, body_css_classes
   end
 
   def test_current_theme_with_nil_user_specific_theme
     @user.pref.ui_theme = nil
     @user.pref.save!
 
-    with_settings :ui_theme => @standard_theme.id do
-      assert_equal @standard_theme.id, current_theme.id
-      assert_match /.*theme-#{@standard_theme.name}.*/, body_css_classes
-    end
+    assert_equal @standard_theme.id, current_theme.id
+    assert_match /.*theme-#{@standard_theme.name}.*/, body_css_classes
   end
 
   def test_current_theme_with_wrong_user_specific_theme
     @user.pref.ui_theme = 'wrong'
     @user.pref.save!
 
-    with_settings :ui_theme => @standard_theme.id do
-      assert_equal @standard_theme.id, current_theme.id
-      assert_match /.*theme-#{@standard_theme.name}.*/, body_css_classes
-    end
+    assert_equal @standard_theme.id, current_theme.id
+    assert_match /.*theme-#{@standard_theme.name}.*/, body_css_classes
   end
 
 end
