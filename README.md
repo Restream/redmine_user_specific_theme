@@ -33,7 +33,7 @@ Now you should be able to see the plugin in **Administration > Plugins**.
 
 ## Usage
 
-The plugin adds the **Theme** setting to the user account. If the **Theme** setting is blank, then the system-wide theme is applied; otherwise, the user-specific theme is displayed.
+The plugin adds the **Theme** setting to the user account. If the **Theme** setting is blank, then the system-wide theme is applied; otherwise, the selected theme is displayed.
 ![user theme](user_specific_theme_1.png)
 
 ## License
