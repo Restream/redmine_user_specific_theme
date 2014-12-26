@@ -7,6 +7,8 @@ This plugin allows Redmine users to select themes in their account settings. The
 
 ## Installation
 
+*These installation instructions are based on Redmine 2.x. For instructions for Redmine 1.x, see [Redmine wiki](http://www.redmine.org/projects/redmine/wiki/Plugins).*
+
 1. To install the plugin
     * Download the .ZIP archive, extract files and copy the plugin directory into *#{REDMINE_ROOT}/plugins*.
     
