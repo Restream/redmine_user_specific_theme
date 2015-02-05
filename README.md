@@ -24,12 +24,16 @@ This plugin version is compatible only with Redmine 2.1.x and later.
 
             git clone https://github.com/Undev/redmine_user_specific_theme.git plugins/redmine_user_specific_theme
 
-2. Update the Gemfile.lock file, the local package index and install the dependencies:  
+2. Install the required gems using the command:  
 
-         rm Gemfile.lock  
-         sudo apt-get update  
-         sudo apt-get install libxml2-dev libxslt-dev
-         bundle install
+        bundle install  
+
+    * In case of bundle install errors, remove the Gemfile.lock file, update the local package index and install the required dependencies. Then execute the bundle install command again:  
+
+            rm Gemfile.lock
+            sudo apt-get update
+            sudo apt-get install -y libxml2-dev libxslt-dev libpq-dev
+            bundle install
 
 3. Restart Redmine.
 
