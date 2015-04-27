@@ -44,6 +44,10 @@ Now you should be able to see the plugin in **Administration > Plugins**.
 The plugin adds the **Theme** setting to the user account. If the **Theme** setting is blank, then the system-wide theme is applied; otherwise, the selected theme is displayed.
 ![user theme](user_specific_theme_1.png)
 
+## Maintainers
+
+Danil Tashkinov, [github.com/nodecarter](https://github.com/nodecarter)
+
 ## License
 
 Copyright (c) 2015 Undev
