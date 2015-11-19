@@ -8,7 +8,7 @@ This plugin allows Redmine users to select themes in their account settings. The
 ## Compatibility
 
 This plugin version is compatible only with Redmine 3.x and later.  
-<sup>**note: Tested just on *Redmine 3.1*</sup>  
+<sup>**note**: Tested just on *Redmine 3.1*</sup>  
 
 ## Installation
 
