@@ -8,8 +8,8 @@ Redmine::Plugin.register :redmine_user_specific_theme do
   name        'Redmine User-Specific Theme Plugin'
   description 'This plugin allows users to set Redmine themes in the account settings.'
   author      'Undev'
-  version     '1.0.0'
+  version     '1.1.0'
   url         'https://github.com/Undev/redmine_user_specific_theme'
 
-  requires_redmine :version_or_higher => '2.1'
+  requires_redmine :version_or_higher => '3.1'
 end
