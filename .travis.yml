@@ -4,27 +4,15 @@ services:
   - mysql
 
 rvm:
-  - 1.9.3
-  - 2.0.0
+  - 2.3.1
 
 gemfile:
   - $REDMINE_PATH/Gemfile
 
 env:
-  - REDMINE_VER=2.1.6
-  - REDMINE_VER=2.2.4
-  - REDMINE_VER=2.3.3
-  - REDMINE_VER=2.4.4
-  - REDMINE_VER=2.5.0
-
-matrix:
-  exclude:
-    - rvm: 2.0.0
-      env: REDMINE_VER=2.1.6
-      gemfile: $REDMINE_PATH/Gemfile
-    - rvm: 2.0.0
-      env: REDMINE_VER=2.2.4
-      gemfile: $REDMINE_PATH/Gemfile
+  - REDMINE_VER=3.1.7
+  - REDMINE_VER=3.2.5
+  - REDMINE_VER=3.3.2
 
 before_install:
   - export PLUGIN_NAME=redmine_user_specific_theme
@@ -36,9 +24,9 @@ before_install:
   - cd $REDMINE_PATH
 
 before_script:
-  - rake db:create
-  - rake db:migrate
-  - rake redmine:plugins:migrate
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+  - bundle exec rake redmine:plugins:migrate
 
 script:
-  - rake redmine:plugins:test NAME=$PLUGIN_NAME
+  - bundle exec rake redmine:plugins:test NAME=$PLUGIN_NAME RUBYOPT="-W0"

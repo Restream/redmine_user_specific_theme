@@ -24,7 +24,3 @@ module RedmineUserSpecificTheme::Patches
 
   end
 end
-
-unless ApplicationHelper.included_modules.include?(RedmineUserSpecificTheme::Patches::ApplicationHelperPatch)
-  ApplicationHelper.send :include, RedmineUserSpecificTheme::Patches::ApplicationHelperPatch
-end

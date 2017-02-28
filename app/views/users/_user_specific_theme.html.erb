@@ -1,0 +1,4 @@
+<%= labelled_fields_for :pref, @user.pref do |pref_fields| %>
+<p><%= pref_fields.select :ui_theme, Redmine::Themes.themes.collect { |t| [t.name, t.id] },
+    { include_blank: true } %></p>
+<% end %>
