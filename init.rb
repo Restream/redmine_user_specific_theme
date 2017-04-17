@@ -7,7 +7,7 @@ Redmine::Plugin.register :redmine_user_specific_theme do
   version     '1.2.0'
   url         'https://github.com/Restream/redmine_user_specific_theme'
 
-  requires_redmine :version_or_higher => '2.1'
+  requires_redmine :version_or_higher => '3.1'
 end
 
 require 'redmine_user_specific_theme'
