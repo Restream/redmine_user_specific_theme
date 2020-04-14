@@ -4,7 +4,7 @@ module RedmineUserSpecificTheme::Patches
   module ApplicationHelperPatch
     extend ActiveSupport::Concern
 
-   def current_theme
+    def current_theme
       user_theme = super
       user_theme = Redmine::Themes.theme(User.current.pref.ui_theme)
       user_theme || Redmine::Themes.theme(Setting.ui_theme)
