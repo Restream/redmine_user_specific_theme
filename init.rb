@@ -10,4 +10,4 @@ Redmine::Plugin.register :redmine_user_specific_theme do
   requires_redmine :version_or_higher => '4.0'
 end
 
-require 'redmine_user_specific_theme'
+require File.dirname(__FILE__) + '/lib/redmine_user_specific_theme'
