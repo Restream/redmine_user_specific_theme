@@ -22,4 +22,3 @@ module RedmineUserSpecificTheme::Patches
   end
 end
 Redmine::Themes.prepend(RedmineUserSpecificTheme::Patches::ApplicationHelperPatch)
-
