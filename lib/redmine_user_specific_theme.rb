@@ -1,9 +1,9 @@
 module RedmineUserSpecificTheme
 end
 
-require_dependency 'redmine_user_specific_theme/hooks/view_hooks'
-require_dependency 'redmine_user_specific_theme/patches/user_preference_patch'
-require_dependency 'redmine_user_specific_theme/patches/application_helper_patch'
+require File.dirname(__FILE__) + '/redmine_user_specific_theme/hooks/view_hooks'
+require File.dirname(__FILE__) + '/redmine_user_specific_theme/patches/user_preference_patch'
+require File.dirname(__FILE__) + '/redmine_user_specific_theme/patches/application_helper_patch'
 
 ActiveSupport::Reloader.to_prepare do
 
