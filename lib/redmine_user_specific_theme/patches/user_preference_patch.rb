@@ -1,27 +1,17 @@
-require_dependency 'user_preference'
+require_dependency 'my_controller'
 
 module RedmineUserSpecificTheme
   module Patches
     module UserPreferencePatch
-
-      def self.prepended(base)
-        base.class_eval do
-          if defined? safe_attributes
-            safe_attributes :ui_theme
-          end
+      def account
+        Rails.logger.info "Account with theme patch applied"
+        if request.put? && params[:pref]
+          theme = params[:pref][:ui_theme]
+          User.current.pref.others[:ui_theme] = theme if theme
+          User.current.pref.save
+          Rails.logger.info "Saved theme: #{theme}"
         end
-      end
-
-      def ui_theme
-        self[:ui_theme]
-      end
-
-      def ui_theme=(val)
-        self[:ui_theme] = val
-      end
-
-      def ui_theme?
-        ui_theme.blank?
+        super
       end
 
     end
