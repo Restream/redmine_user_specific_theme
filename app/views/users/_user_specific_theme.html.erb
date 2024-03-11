@@ -1,4 +1,6 @@
-<%= labelled_fields_for :pref, @user.pref do |pref_fields| %>
-<p><%= pref_fields.select :ui_theme, Redmine::Themes.themes.collect { |t| [t.name, t.id] },
-    { include_blank: true } %></p>
-<% end %>
+<p>
+  <%= label_tag :user_preference_attributes_ui_theme, l(:field_ui_theme) %><br>
+  <%= select_tag 'pref[ui_theme]',
+                 options_for_select(Redmine::Themes.themes.map { |theme| [theme.name, theme.id] },
+                                    @pref[:ui_theme]), include_blank: true %>
+</p>
